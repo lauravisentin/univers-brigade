@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useCallback } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import type { GalleryResource } from "@/lib/galleryData";
@@ -11,47 +11,14 @@ type Props = {
   onClose: () => void;
 };
 
+// easing utilisé pour les animations Framer Motion
 const ease = [0.22, 1, 0.36, 1] as const;
 
 export default function ResourceReveal({ resource, onClose }: Props) {
   const panelRef = useRef<HTMLDivElement>(null);
-  const closeRef = useRef<HTMLButtonElement>(null);
+
+  // respecte la préférence "reduce motion" du système
   const reduce = useReducedMotion();
-
-  const handleKeyDown = useCallback(
-    (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        onClose();
-        return;
-      }
-      if (e.key !== "Tab" || !panelRef.current) return;
-      const focusable = panelRef.current.querySelectorAll<HTMLElement>(
-        'button, a[href], [tabindex]:not([tabindex="-1"])'
-      );
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
-      if (e.shiftKey && document.activeElement === first) {
-        e.preventDefault();
-        last?.focus();
-      } else if (!e.shiftKey && document.activeElement === last) {
-        e.preventDefault();
-        first?.focus();
-      }
-    },
-    [onClose]
-  );
-
-  useEffect(() => {
-    if (!resource) return;
-    document.addEventListener("keydown", handleKeyDown);
-    // document.body.style.overflow = "hidden";
-    const t = setTimeout(() => closeRef.current?.focus(), 60);
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-      // document.body.style.overflow = "";
-      clearTimeout(t);
-    };
-  }, [resource, handleKeyDown]);
 
   return (
     <AnimatePresence>
@@ -67,6 +34,7 @@ export default function ResourceReveal({ resource, onClose }: Props) {
           exit={{ opacity: 0 }}
           transition={reduce ? { duration: 0 } : { duration: 0.3 }}
         >
+          {/* panneau image */}
           <motion.div
             className="vReveal__imagePane"
             initial={reduce ? false : { clipPath: "inset(0 100% 0 0)" }}
@@ -84,9 +52,9 @@ export default function ResourceReveal({ resource, onClose }: Props) {
             />
           </motion.div>
 
+          {/* panneau texte */}
           <div className="vReveal__textPane">
             <button
-              ref={closeRef}
               className="vReveal__close"
               onClick={onClose}
               aria-label="Fermer"
