@@ -1,0 +1,271 @@
+.hEdit {
+  position: relative;
+}
+
+.hEdit__sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hEdit__track {
+  display: flex;
+  height: 100%;
+  will-change: transform;
+}
+
+/* --- Panels --- */
+
+.hEdit__panel {
+  flex-shrink: 0;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.hEdit__panel--hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f2ed;
+}
+
+.hEdit__panel--light {
+  background: #f5f2ed;
+  color: #1a1a1a;
+}
+
+.hEdit__panel--dark {
+  background: #0e0e0e;
+  color: #f4f4f5;
+}
+
+/* --- Hero content --- */
+
+.hEdit__heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 900px;
+  padding: 40px;
+}
+
+.hEdit__heroHeadline {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: clamp(52px, 8vw, 120px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.hEdit__heroRule {
+  width: 60px;
+  height: 1px;
+  background: rgba(26, 26, 26, 0.2);
+  margin: 36px auto;
+}
+
+.hEdit__heroSubline {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(26, 26, 26, 0.55);
+  max-width: 480px;
+  margin: 0;
+}
+
+/* --- Editorial image --- */
+
+.hEdit__image {
+  position: relative;
+  overflow: hidden;
+}
+
+.hEdit__imageInner {
+  position: absolute;
+  inset: 0;
+  will-change: clip-path;
+
+  img {
+    filter: grayscale(15%) contrast(1.02);
+    transition: filter 600ms ease;
+  }
+}
+
+/* --- Editorial text --- */
+
+.hEdit__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(40px, 6vw, 100px);
+  overflow: hidden;
+}
+
+.hEdit__textReveal {
+  will-change: transform, opacity;
+}
+
+.hEdit__label {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.4;
+  margin-bottom: 20px;
+}
+
+.hEdit__title {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: clamp(36px, 4vw, 64px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.hEdit__rule {
+  width: 40px;
+  height: 1px;
+  margin: 24px 0;
+
+  .hEdit__panel--light & {
+    background: rgba(26, 26, 26, 0.2);
+  }
+
+  .hEdit__panel--dark & {
+    background: rgba(244, 244, 245, 0.2);
+  }
+}
+
+.hEdit__desc {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.75;
+  opacity: 0.55;
+  max-width: 420px;
+  margin: 0 0 32px;
+}
+
+.hEdit__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: currentColor;
+  cursor: pointer;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: currentColor;
+    transition: width 350ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 6px;
+  }
+}
+
+/* --- Scroll hint --- */
+
+.hEdit__scrollHint {
+  position: absolute;
+  bottom: 40px;
+  right: 48px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgb(26, 26, 26);
+}
+
+.hEdit__scrollLabel {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: lowercase;
+}
+
+.hEdit__scrollArrow {
+  animation: hEditNudge 2.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@keyframes hEditNudge {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hEdit__scrollArrow {
+    animation: none;
+  }
+}
+
+/* --- Mobile : fallback vertical --- */
+
+@media (max-width: 768px) {
+  .hEdit {
+    height: auto !important;
+  }
+
+  .hEdit__sticky {
+    position: relative;
+    height: auto;
+    overflow: visible;
+  }
+
+  .hEdit__track {
+    flex-direction: column;
+    transform: none !important;
+  }
+
+  .hEdit__panel {
+    width: 100%;
+    height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .hEdit__panel--hero {
+    min-height: 90vh;
+  }
+
+  .hEdit__image {
+    aspect-ratio: 4 / 3;
+  }
+
+  .hEdit__text {
+    padding: 40px 24px 56px;
+  }
+
+  .hEdit__scrollHint {
+    display: none;
+  }
+}

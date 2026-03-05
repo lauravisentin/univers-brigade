@@ -1,0 +1,39 @@
+$v-bg-light: #f5f2ed;
+$v-bg-dark: #0e0e0e;
+$v-text-dark: #1a1a1a;
+$v-text-light: #f4f4f5;
+$v-muted-dark: rgba(26, 26, 26, 0.5);
+$v-muted-light: rgba(244, 244, 245, 0.55);
+$v-border-light: rgba(0, 0, 0, 0.1);
+$v-border-dark: rgba(255, 255, 255, 0.1);
+
+.vitrine {
+  position: relative;
+  z-index: 1;
+  background: $v-bg-light;
+  color: $v-text-dark;
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+.vitrine h1,
+.vitrine h2,
+.vitrine h3 {
+  font-family: var(--font-serif), Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.vitrine a {
+  text-decoration: none;
+}
+
+.vitrine *::selection {
+  background: $v-text-dark;
+  color: $v-text-light;
+}

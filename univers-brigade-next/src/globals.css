@@ -1,0 +1,37 @@
+:root {
+  --bg: #0b0b0c;
+  --panel: #111114;
+  --text: #f4f4f5;
+  --muted: rgba(244, 244, 245, 0.7);
+  --gold: #f2b84b;
+  --gold2: #d9971a;
+  --border: rgba(255, 255, 255, 0.08);
+  --shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  --radius: 16px;
+  --container: 1100px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.appMain {
+  min-height: 70vh;
+}/*# sourceMappingURL=globals.css.map */

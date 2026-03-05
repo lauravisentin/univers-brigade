@@ -1,0 +1,77 @@
+.vHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 40px;
+  transition: background 300ms ease, backdrop-filter 300ms ease;
+
+  @media (max-width: 768px) {
+    padding: 20px 20px;
+  }
+}
+
+.vHeader--scrolled {
+  // background: rgba(245, 242, 237, 0.2);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.vHeader__brand {
+  font-family: var(--font-serif), Georgia, serif;
+  font-style: italic;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: opacity 250ms ease;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #1a1a1a;
+    outline-offset: 4px;
+  }
+}
+
+.vHeader__menuBtn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+
+  &:focus-visible {
+    outline: 2px solid #1a1a1a;
+    outline-offset: 2px;
+  }
+}
+
+.vHeader__menuLine {
+  display: block;
+  height: 1.5px;
+  background: #1a1a1a;
+  transform-origin: center;
+  position: absolute;
+
+  .vHeader--light & {
+    background: #f4f4f5;
+  }
+}
+
+.vHeader--light .vHeader__menuBtn:focus-visible {
+  outline-color: #f4f4f5;
+}
