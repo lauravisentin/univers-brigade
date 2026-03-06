@@ -50,18 +50,21 @@ src/
 ## Liste des fichiers sources
 Triés par complexité décroissante
 
+Au lieu de captures, les trois premiers composants contiennent le code le plus représentatif de mon apprentissage
+- Scroll-triggered horizontal (hook avancé)
+- Animations clip-path + stagger (CSS + timing)
+- Spring physics (animation réaliste)
+- Micro-interaction burger (Framer Motion pratique)
+
 ### Composants (logique, interactions, animations)
 
-1. **`src/components/home/HorizontalEditorial.tsx`**
+1. ***`src/components/home/HorizontalEditorial.tsx`**
    Composant le plus complexe du projet. Transforme le scroll vertical en défilement horizontal de panneaux éditoriaux. Chaque panneau contient une image avec animation clip-path et du texte avec stagger reveal. Utilise useScroll et useTransform de Framer Motion pour synchroniser la position horizontale avec le scroll.
 
-2. **`src/components/ressources/HorizontalGallery.tsx`**
-   Galerie horizontale avec interaction drag (souris/tactile), effet parallax sur les images des cartes, barre de progression du scroll, détection drag vs clic, gestion clavier (Enter/Space), et overlay de détail. Adaptation responsive (vertical sur mobile).
-
-3. **`src/components/ressources/GrandeGallery.tsx`**
+2. ***`src/components/ressources/GrandeGallery.tsx`**
    Grille animée. Les cartes démarrent empilées au centre puis se déploient en grille avec des animations spring. Supporte plusieurs variantes de taille (large, tall, wide, medium). Hover et tap feedback avec Framer Motion layout animations.
 
-4. **`src/components/layout/SiteHeader.tsx`**
+3. **`src/components/layout/SiteHeader.tsx`**
    Header du site utilisé sur plusieurs pages. Bouton burger animé avec Framer Motion (rotation des lignes). Détection du scroll pour changer de style (scrollY > 60px). Gère l'ouverture/fermeture du menu fullscreen. Supporte les variantes dark/light.
 
 5. **`src/components/layout/FullscreenMenu.tsx`**
@@ -95,9 +98,6 @@ Triés par complexité décroissante
 
 14. **`src/app/globals.scss`**
     Styles globaux : reset CSS, typographie de base, variables de couleurs, utilitaires de layout, fondations responsive.
-
-15. **`src/components/ressources/HorizontalGallery.scss`**
-    Styles de la galerie horizontale : piste scrollable, cartes, barre de progression, header/compteur, texture grain.
 
 16. **`src/components/ressources/GrandeGallery.scss`**
     Styles de la grille masonry : variantes de taille des cartes (large, tall, wide, medium), états hover, footer.
