@@ -1,4 +1,4 @@
-import { fontVariableClasses } from "@/lib/vitrineFonts";
+import { fontVariableClasses } from "@/lib/fonts";
 import "./globals.scss";
 
 export const metadata = {

@@ -18,3 +18,7 @@ https://univers-brigade-6u9o.vercel.app/
 - TypeScript  
 - SCSS  
 - Framer Motion
+- 
+## Images :
+Images libres de droits utilisées à des fins de démonstration.
+La source est mentionnée dans la page /Ressources.

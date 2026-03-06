@@ -203,7 +203,7 @@ export default function GrandeGallery({ items }: { items: GalleryResource[] }) {
                     rel="noreferrer"
                     className="animGallery__footerLink"
                 >
-                    Photos — Unsplash
+                    Photos de Unsplash
                 </a>
             </footer>
         </section>

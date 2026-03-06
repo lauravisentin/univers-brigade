@@ -1,10 +1,10 @@
 "use client";
 
-import VitrineHeader from "@/components/vitrine/VitrineHeader";
-import SmoothScroll from "@/components/vitrine/SmoothScroll";
-import HorizontalEditorial from "@/components/vitrine/HorizontalEditorial";
+import SiteHeader from "@/components/layout/SiteHeader";
+import SmoothScroll from "@/components/ui/SmoothScroll";
+import HorizontalEditorial from "@/components/home/HorizontalEditorial";
 import { heroData, getFeatured } from "@/lib/galleryData";
-import "./vitrine.scss";
+import "./page.scss";
 
 const featured = getFeatured();
 
@@ -12,7 +12,7 @@ export default function Page() {
   return (
     <div className="vitrine">
       <SmoothScroll>
-        <VitrineHeader />
+        <SiteHeader />
         <HorizontalEditorial hero={heroData} items={featured} />
       </SmoothScroll>
     </div>

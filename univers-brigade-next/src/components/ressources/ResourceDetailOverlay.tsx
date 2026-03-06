@@ -21,7 +21,7 @@ export default function ResourceDetailOverlay({ resource, onClose }: Props) {
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
-    // (Optionnel) focus direct sur le bouton fermer pour accessibilité
+    // focus direct sur le bouton fermer pour accessibilité
     const timer = setTimeout(() => closeRef.current?.focus(), 50);
 
     return () => {

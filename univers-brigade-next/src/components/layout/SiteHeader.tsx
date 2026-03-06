@@ -9,9 +9,9 @@ ce composant est côté client car :
 import { useState, useEffect } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import FullscreenMenu from "./FullscreenMenu";
-import "./VitrineHeader.scss";
+import "./SiteHeader.scss";
 
-export default function VitrineHeader({ variant = "dark" }: { variant?: "dark" | "light" }) {
+export default function SiteHeader({ variant = "dark" }: { variant?: "dark" | "light" }) {
 
   /*
   état du menu fullscreen

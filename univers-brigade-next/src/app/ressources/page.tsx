@@ -1,5 +1,5 @@
-import GrandeGallery from "@/components/sections/GrandeGallery";
-import VitrineHeader from "@/components/vitrine/VitrineHeader";
+import GrandeGallery from "@/components/ressources/GrandeGallery";
+import SiteHeader from "@/components/layout/SiteHeader";
 import { galleryResources } from "@/lib/galleryData";
 
 export const metadata = {
@@ -10,7 +10,7 @@ export const metadata = {
 export default function RessourcesPage() {
   return (
     <>
-      <VitrineHeader variant="light" />
+      <SiteHeader variant="light" />
       <GrandeGallery items={galleryResources} />
     </>
   );

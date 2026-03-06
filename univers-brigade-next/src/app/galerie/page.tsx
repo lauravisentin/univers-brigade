@@ -1,4 +1,4 @@
-import HorizontalGallery from "@/components/sections/HorizontalGallery";
+import HorizontalGallery from "@/components/ressources/HorizontalGallery";
 import { galleryResources } from "@/lib/galleryData";
 
 export const metadata = {

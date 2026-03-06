@@ -228,7 +228,8 @@ function EditorialPanel({
       <div className="hEdit__text">
         {[
           <span key="label" className="hEdit__label">
-            {item.tag} — {item.category}
+            {item.tag}
+             {/* - {item.category} */}
           </span>,
           <h2 key="title" className="hEdit__title">{item.title}</h2>,
           <div key="rule" className="hEdit__rule" />,
