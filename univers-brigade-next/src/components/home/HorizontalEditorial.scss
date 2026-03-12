@@ -54,13 +54,13 @@
 }
 
 .hEdit__heroHeadline {
-  font-family: var(--font-serif), Georgia, serif;
-  font-size: clamp(52px, 8vw, 120px);
-  font-weight: 400;
-  line-height: 1.05;
-  letter-spacing: -0.025em;
-  color: #1a1a1a;
   margin: 0;
+  line-height: 0;
+}
+
+.hEdit__heroLogo {
+  width: clamp(280px, 45vw, 600px);
+  height: auto;
 }
 
 .hEdit__heroRule {

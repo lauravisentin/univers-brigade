@@ -66,7 +66,16 @@ export default function HorizontalEditorial({ hero, items }: Props) {
             {/* premier panneau : section hero */}
             <div className="hEdit__panel hEdit__panel--hero">
               <div className="hEdit__heroContent">
-                <h1 className="hEdit__heroHeadline">{hero.headline}</h1>
+                <h1 className="hEdit__heroHeadline">
+                  <Image
+                    src="/images/COEUR-brigade.png"
+                    alt={hero.headline}
+                    width={600}
+                    height={200}
+                    className="hEdit__heroLogo"
+                    priority
+                  />
+                </h1>
                 <div className="hEdit__heroRule" />
                 <p className="hEdit__heroSubline">{hero.subline}</p>
               </div>
