@@ -1,4 +1,4 @@
-import HorizontalGallery from "@/components/ressources/HorizontalGallery";
+import GrandeGallery from "@/components/ressources/GrandeGallery";
 import { galleryResources } from "@/lib/galleryData";
 
 export const metadata = {
@@ -7,5 +7,5 @@ export const metadata = {
 };
 
 export default function GaleriePage() {
-  return <HorizontalGallery items={galleryResources} />;
+  return <GrandeGallery items={galleryResources} />;
 }
